@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ZenFeed</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <nav class="app-nav">
+        <div class="logo">ZF<span>.</span></div>
+        <div class="nav-items">
+            <button class="nav-btn active" data-target="feed"><i
+                    data-lucide="layout-grid"></i><span>Journal</span></button>
+            <button class="nav-btn" data-target="discover"><i data-lucide="search"></i><span>Discover</span></button>
+            <button class="nav-btn" data-target="stats"><i data-lucide="bar-chart-3"></i><span>Insights</span></button>
+            <button class="nav-btn" data-target="settings"><i
+                    data-lucide="plus-circle"></i><span>Curation</span></button>
+        </div>
+    </nav>
+
+    <main class="content">
+        <section id="view-feed" class="view active">
+            <header class="view-header">
+                <div class="meta">/ Home</div>
+                <h1>Your Focus<span>.</span></h1>
+            </header>
+            <div id="video-grid" class="bento-grid"></div>
+        </section>
+
+        <section id="view-discover" class="view hidden">
+            <header class="view-header">
+                <div class="meta">/ Knowledge</div>
+                <h1>Search Tutorials<span>.</span></h1>
+            </header>
+            <div class="search-section" style="margin-bottom: 3rem;">
+                <div class="search-input-group">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="global-search" placeholder="Find tutorials, guides, videos...">
+                    <button id="btn-global-search">Search</button>
+                </div>
+            </div>
+            <div id="search-results-grid" class="bento-grid"></div>
+        </section>
+
+        <section id="view-stats" class="view hidden">
+            <header class="view-header">
+                <div class="meta">/ Analytics</div>
+                <h1>Consumption<span>.</span></h1>
+            </header>
+            <div class="stats-container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Total Plays</span>
+                        <div class="stat-value" id="stat-total-plays">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Main Interest</span>
+                        <div class="stat-value" id="stat-top-channel">-</div>
+                    </div>
+                </div>
+                <div class="manage-section" style="margin-top: 2rem;">
+                    <h3 class="section-title">History by Channel</h3>
+                    <div id="stats-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="view-settings" class="view hidden">
+            <header class="view-header">
+                <div class="meta">/ Curation</div>
+                <h1>The Circle<span>.</span></h1>
+            </header>
+            <div class="curation-layout">
+                <div class="search-section">
+                    <div class="search-input-group">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="channel-search" placeholder="Search creators...">
+                        <button id="btn-search">Search</button>
+                    </div>
+                    <div id="search-results" class="results-grid" style="margin-top: 2rem;"></div>
+                </div>
+                <div class="manage-section">
+                    <h3 class="section-title" style="margin-top: 0;">Your Circle</h3>
+                    <div id="channel-list" class="chip-stack"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
