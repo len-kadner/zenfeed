@@ -27,3 +27,7 @@ Dieses Projekt wurde zu Bildungs- und Forschungszwecken entwickelt. ZenFeed ist 
 
 ## Lizenz
 Dieses Projekt ist unter der MIT-Lizenz lizenziert. Weitere Informationen finden Sie in der Datei LICENSE.
+
+## Third-Party Assets
+- Icons: [Lucide Icons](https://lucide.dev) (ISC License)
+- Data Fetching: Public instances of [Piped](https://piped.video) and [Invidious](https://invidious.io)
