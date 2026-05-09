@@ -1,6 +1,9 @@
 /**
- * ZenFeed "Titan" Engine - v2.1
- * Performance-optimiert & Modernisiert
+ * ZenFeed - Minimalist Video Aggregator
+ * @license MIT
+ * @author Len Kadner
+ * 
+ * Copyright (c) 2026 Len Kadner
  */
 
 (function () {
