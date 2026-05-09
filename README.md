@@ -1,6 +1,3 @@
-# zenfeed
-Productivity-Tool
-
 # ZenFeed: Minimalist Video Aggregation Interface
 ZenFeed ist eine webbasierte, statische Anwendung zur Aggregation von Video-Inhalten. Das Projekt zielt darauf ab, eine ablenkungsfreie Umgebung für den Konsum von Lehr- und Informationsvideos zu schaffen, indem es auf algorithmische Empfehlungen, Kommentare und soziale Interaktionselemente verzichtet.
 
