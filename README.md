@@ -1,6 +1,8 @@
 # ZenFeed: Minimalist Video Aggregation Interface
 ZenFeed ist eine webbasierte, statische Anwendung zur Aggregation von Video-Inhalten. Das Projekt zielt darauf ab, eine ablenkungsfreie Umgebung für den Konsum von Lehr- und Informationsvideos zu schaffen, indem es auf algorithmische Empfehlungen, Kommentare und soziale Interaktionselemente verzichtet.
 
+Demo: https://len-kadner.github.io/zenfeed/
+
 ## Technische Übersicht
 Die Anwendung basiert auf einer reinen Client-Side-Architektur (HTML5, CSS3, JavaScript) und nutzt dezentrale Instanzen (Piped/Invidious-Schnittstellen) sowie RSS-Feeds zur Bereitstellung von Inhalten.
 
