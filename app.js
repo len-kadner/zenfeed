@@ -195,16 +195,30 @@
         UI.showLoading('video-grid', 'Fetching latest Focus...');
 
         try {
-            const feedPromises = state.channels.map(c => fetchRSS(c.id));
-            const allResults = await Promise.all(feedPromises);
+            const allResults = [];
+
+            // LÖSUNG: Sequenzielle Abfrage statt Promise.all()
+            for (const c of state.channels) {
+                const feed = await fetchRSS(c.id);
+                allResults.push(feed);
+
+                // Pro-Tipp: 300ms Pause zwischen den Requests, um 429 (Too Many Requests) bei den Proxies zu vermeiden
+                await new Promise(resolve => setTimeout(resolve, 300));
+            }
 
             const flatVideos = allResults.flat()
                 .filter(v => v && v.id)
                 .sort((a, b) => new Date(b.published) - new Date(a.published));
 
+            if (flatVideos.length === 0) {
+                grid.innerHTML = `<div class="empty-state"><h3>No recent videos</h3></div>`;
+                return;
+            }
+
             grid.innerHTML = flatVideos.map(v => UI.renderVideoCard(v)).join("");
-            lucide.createIcons();
+            if (typeof lucide !== 'undefined') lucide.createIcons(); // Sicherheitscheck für lucide
         } catch (err) {
+            console.error("Feed error:", err);
             grid.innerHTML = `<div class="error-msg">Sync failed. Try refreshing.</div>`;
         }
     }
