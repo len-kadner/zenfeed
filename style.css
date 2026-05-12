@@ -535,4 +535,211 @@ body {
     .curation-layout {
         grid-template-columns: 1fr;
     }
+
+    /* --- Channel Filter Bar --- */
+    .channel-filter-bar {
+        display: flex;
+        gap: 0.75rem;
+        overflow-x: auto;
+        padding: 0.5rem 0 1.5rem 0;
+        margin-bottom: 1rem;
+        scrollbar-width: none;
+        /* Firefox */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .channel-filter-bar::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+    .filter-btn {
+        flex: 0 0 auto;
+        /* Verhindert das Quetschen der Buttons */
+        background: var(--card);
+        border: 1px solid var(--border);
+        color: var(--text-dim);
+        padding: 0.6rem 1.2rem;
+        border-radius: 12px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: var(--transition);
+        white-space: nowrap;
+    }
+
+    .filter-btn:hover {
+        border-color: var(--text-dim);
+        color: var(--text);
+    }
+
+    .filter-btn.active {
+        background: var(--text);
+        color: var(--bg);
+        border-color: var(--text);
+    }
+}
+
+/* --- Channel Filter Bar --- */
+.channel-filter-bar {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding: 0.5rem 0 1.5rem 0;
+    margin-bottom: 1rem;
+    scrollbar-width: none;
+    /* Firefox */
+    -webkit-overflow-scrolling: touch;
+}
+
+.channel-filter-bar::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.filter-btn {
+    flex: 0 0 auto;
+    /* Verhindert das Quetschen der Buttons */
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    border-color: var(--text-dim);
+    color: var(--text);
+}
+
+.filter-btn.active {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
+.initial-loader-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+}
+
+.zen-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    border-top-color: #000;
+    /* Deine Akzentfarbe */
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* --- Spezifische Optimierung für iPhone 12 mini & Modern Mobile --- */
+@media (max-width: 480px) {
+    :root {
+        --nav-height: 70px;
+    }
+
+    body {
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+
+    .app-nav {
+        height: calc(var(--nav-height) + env(safe-area-inset-bottom));
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid var(--border);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-top: 8px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .nav-items {
+        gap: 0;
+    }
+
+    .nav-btn {
+        gap: 4px;
+        font-size: 10px;
+        flex: 1;
+    }
+
+    .nav-btn i,
+    .nav-btn svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .content {
+        padding: calc(2rem + env(safe-area-inset-top)) 1.25rem calc(var(--nav-height) + env(safe-area-inset-bottom) + 20px) 1.25rem;
+    }
+
+    .view-header h1 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .video-content {
+        padding: 1rem;
+    }
+
+    .search-input-group {
+        padding: 0.4rem 0.4rem 0.4rem 1rem;
+        border-radius: 12px;
+    }
+
+    .search-input-group input {
+        font-size: 16px;
+    }
+
+    .search-input-group button {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .curation-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
 }
