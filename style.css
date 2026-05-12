@@ -746,25 +746,25 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 100%; /* Zwingt die Gruppe, niemals breiter als der Screen zu sein */
+    max-width: 100%; 
     box-sizing: border-box;
-    gap: 0.5rem; /* Etwas weniger Abstand auf dem kleinen Screen */
+    gap: 0.5rem;
     padding: 0.4rem 0.4rem 0.4rem 1rem;
 }
 
 .search-input-group input {
     flex: 1;
-    min-width: 0; /* DER ENTSCHEIDENDE FIX: Erlaubt dem Input, kleiner als sein Inhalt zu schrumpfen */
+    min-width: 0; 
     width: 100%;
     background: none;
     border: none;
     color: white;
-    font-size: 16px; /* Verhindert iOS-Zoom */
+    font-size: 16px; 
 }
 
 .search-input-group button {
-    flex-shrink: 0; /* Verhindert, dass der Button gequetscht wird */
-    white-space: nowrap; /* Button-Text bleibt in einer Zeile */
+    flex-shrink: 0;
+    white-space: nowrap;
     padding: 0.6rem 1rem;
 }
 }
